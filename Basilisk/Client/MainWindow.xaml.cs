@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Basilisk;
 
-namespace Basilisk
+namespace Client
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
