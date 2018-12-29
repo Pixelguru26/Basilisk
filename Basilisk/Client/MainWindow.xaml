@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Basilisk"
         mc:Ignorable="d"
-        Title="BASILISK" Height="327.334" Width="470.666" Visibility="Visible" Background="#FF07070F" Foreground="Gainsboro">
+        Title="BASILISK" Height="327.334" Width="470.666" Visibility="Visible" Background="#FF07070F" Foreground="Gainsboro" GotFocus="Window_GotFocus" GotKeyboardFocus="Window_GotKeyboardFocus">
 	<Grid x:Name="GridHost">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition x:Name="Channels" ToolTip="Channels"/>
@@ -44,8 +44,11 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		<TextBox x:Name="TextInputBox" Grid.Column="2" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom" Background="#FF13161D" BorderBrush="{x:Null}" Foreground="White" SpellCheck.IsEnabled="True" AcceptsReturn="True" AcceptsTab="True" TextOptions.TextFormattingMode="Display" KeyDown="TextInputBox_KeyDown" PreviewKeyDown="TextInputBox_PreviewKeyDown" PreviewKeyUp="TextInputBox_PreviewKeyUp"/>
-		<Button x:Name="ToggleMembers" Content="&lt;" Grid.Column="3" BorderThickness="0" ClickMode="Press" BorderBrush="{x:Null}" Background="#FF13161D" Foreground="#FF6BB2DA" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Click="ToggleMembers_Click"/>
+		<TextBox x:Name="TextInputBox" Grid.Column="2" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom" Background="#FF13161D" BorderBrush="{x:Null}" Foreground="#FF818DAA" SpellCheck.IsEnabled="True" AcceptsReturn="True" AcceptsTab="True" TextOptions.TextFormattingMode="Display" KeyDown="TextInputBox_KeyDown" PreviewKeyDown="TextInputBox_PreviewKeyDown" PreviewKeyUp="TextInputBox_PreviewKeyUp" Margin="0,0,35,0" BorderThickness="1,1,0,1"/>
+		<Button x:Name="ButtonSendMessage" Content="↵" Grid.Column="2" Background="#FF13161D" BorderBrush="#FF07070F" Foreground="#FF818DAA" FontSize="16" BorderThickness="1,1,0,1" FlowDirection="RightToLeft" Grid.IsSharedSizeScope="True" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="35" Click="ButtonSendMessage_Click"/>
+		<Button x:Name="ToggleMembers" Content="&lt;" Grid.Column="3" BorderThickness="0" ClickMode="Press" BorderBrush="{x:Null}" Background="#FF13161D" Foreground="#FF6BB2DA" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Click="ToggleMembers_Click" VerticalContentAlignment="Center"/>
 		<Button x:Name="ToggleChannels" Content="&gt;" Grid.Column="1" BorderThickness="0" ClickMode="Press" BorderBrush="{x:Null}" Background="#FF13161D" Foreground="#FF6BB2DA" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Click="ToggleChannels_Click"/>
+		<TreeView Background="#FF07070F" Foreground="#FFCFCFCF" BorderBrush="{x:Null}"/>
+		<TreeView Grid.Column="4" Background="#FF07070F" BorderBrush="{x:Null}" Foreground="White"/>
 	</Grid>
 </Window>

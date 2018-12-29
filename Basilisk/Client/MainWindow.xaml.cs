@@ -64,11 +64,8 @@ namespace Client
 		{
 			if (e.Key == Key.Enter && !e.KeyboardDevice.IsKeyDown(Key.LeftShift) && !e.KeyboardDevice.IsKeyDown(Key.RightShift))
 			{
-				string text = TextInputBox.Text;
-				TextInputBox.Clear();
-				Messages.Add(new Message { Name = "NuLL", Text = text });
-				ChatHistoryBox.Items.Refresh();
-				GetScrollViewer(ChatHistoryBox).ScrollToEnd();
+				SendMessage();
+				e.Handled = true;
 			}
 		}
 
@@ -78,10 +75,6 @@ namespace Client
 
 		private void TextInputBox_PreviewKeyUp(object sender, KeyEventArgs e)
 		{
-			if (e.Key == Key.Enter && !e.KeyboardDevice.IsKeyDown(Key.LeftShift) && !e.KeyboardDevice.IsKeyDown(Key.RightShift))
-			{
-				TextInputBox.Clear();
-			}
 		}
 
 		private ScrollViewer GetScrollViewer(ListBox src)
@@ -90,6 +83,32 @@ namespace Client
 			Decorator border = VisualTreeHelper.GetChild(src, 0) as Decorator;
 			// Get scrollviewer
 			return border.Child as ScrollViewer;
+		}
+		private void SendMessage(string text = null)
+		{
+			if (text==null)
+			{
+				text = TextInputBox.Text;
+				TextInputBox.Clear();
+			}
+			Messages.Add(new Message { Name = "NuLL", Text = text });
+			ChatHistoryBox.Items.Refresh();
+			GetScrollViewer(ChatHistoryBox).ScrollToEnd();
+		}
+
+		private void Window_GotFocus(object sender, RoutedEventArgs e)
+		{
+			TextInputBox.Focus();
+		}
+
+		private void Window_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+		{
+			TextInputBox.Focus();
+		}
+
+		private void ButtonSendMessage_Click(object sender, RoutedEventArgs e)
+		{
+			SendMessage();
 		}
 	}
 }
