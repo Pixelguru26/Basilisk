@@ -19,8 +19,6 @@ namespace Basilisk
 		[JsonConverter(typeof(HexColorJsonConverter))]
 		public Color MenuDark;
 		[JsonConverter(typeof(HexColorJsonConverter))]
-		public Color MenuInput;
-		[JsonConverter(typeof(HexColorJsonConverter))]
 		public Color MenuBorder;
 
         // Panel includes any of the following:
@@ -31,6 +29,8 @@ namespace Basilisk
 		public Color PanelBack;
 		[JsonConverter(typeof(HexColorJsonConverter))]
 		public Color PanelFore;
+        [JsonConverter(typeof(HexColorJsonConverter))]
+        public Color PanelInput;
         [JsonConverter(typeof(HexColorJsonConverter))]
         public Color PanelCaret;
         [JsonConverter(typeof(HexColorJsonConverter))]
