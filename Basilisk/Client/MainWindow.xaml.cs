@@ -25,6 +25,8 @@ namespace Client
 		bool MembersOpen = false;
 		List<Message> Messages;
 
+		public Theme Theme;
+
 		public MainWindow()
 		{
 			InitializeComponent();

@@ -36,10 +36,13 @@
 			</ListBox.ItemsPanel>
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" />
-						<TextBlock Text=": " />
-						<TextBlock Text="{Binding Text}" />
+					<StackPanel Orientation="Vertical">
+						<Rectangle Grid.Column="2" Height="1" Margin="10,0,10,0" Stroke="#FF262D3A"/>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="{Binding Name}" />
+							<TextBlock Text=": " />
+							<TextBlock Text="{Binding Text}" />
+						</StackPanel>
 					</StackPanel>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
