@@ -50,7 +50,9 @@ namespace Basilisk
 		public Color Text;
 		[JsonConverter(typeof(HexColorJsonConverter))]
 		public Color TextLink;
-		[JsonConverter(typeof(HexColorJsonConverter))]
+        [JsonConverter(typeof(HexColorJsonConverter))]
+        public Color TextLinkVisited;
+        [JsonConverter(typeof(HexColorJsonConverter))]
 		public Color TextUser;
         [JsonConverter(typeof(HexColorJsonConverter))]
 		public Color TextSystem;
@@ -65,5 +67,7 @@ namespace Basilisk
         public Color Subtitle;
         [JsonConverter(typeof(HexColorJsonConverter))]
         public Color Tooltip;
+        [JsonConverter(typeof(HexColorJsonConverter))]
+        public Color TooltipBack;
     }
 }
