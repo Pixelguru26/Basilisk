@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.IO;
 using Basilisk;
 
 namespace Client
@@ -33,7 +35,15 @@ namespace Client
 			Channels.Width = new GridLength(0);
 			Members.Width = new GridLength(0);
 			Messages = new List<Message>();
-			Messages.Add(new Message { Name = "Not NuLL", Text = "Test" });
+			//Messages.Add(new Message { Name = "Not NuLL", Text = "Test" });
+			string url = "https://github.com/Pixelguru26/Basilisk";
+
+			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+			Stream resStream = response.GetResponseStream();
+			StreamReader resReader = new StreamReader(resStream);
+			string responseString = resReader.ReadToEnd();
+			Messages.Add(new Message { Name = "GIT", Text = response.StatusDescription });
 			ChatHistoryBox.ItemsSource = Messages;
 		}
 
